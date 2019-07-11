@@ -8,7 +8,7 @@ module Psource
 
   autoload :Source, 'psource/source'
 
-  module MethodExtension
+  module Extension
     def source
       path, line = source_location
       Source.new(path: path).definition_lines_begins_at(line)
@@ -16,4 +16,5 @@ module Psource
   end
 end
 
-Method.include(Psource::MethodExtension)
+Method.include(Psource::Extension)
+UnboundMethod.include(Psource::Extension)
