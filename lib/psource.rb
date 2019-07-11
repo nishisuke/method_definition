@@ -16,5 +16,6 @@ module Psource
   end
 end
 
-Method.include(Psource::Extension)
-UnboundMethod.include(Psource::Extension)
+[Method, UnboundMethod].each do |klass|
+  klass.include(Psource::Extension)
+end
