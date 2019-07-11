@@ -11,7 +11,7 @@ module Psource
   module Extension
     def source
       path, line = source_location
-      Source.new(path: path).definition_lines_begins_at(line)
+      Source.new(path).definition_lines_begins_at(line)
     end
   end
 end

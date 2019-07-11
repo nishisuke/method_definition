@@ -4,7 +4,7 @@ require 'psource/parser'
 
 module Psource
   class Source
-    def initialize(path:, parser: Parser.new)
+    def initialize(path, parser = Parser.new)
       @path = path
       @parser = parser
     end
