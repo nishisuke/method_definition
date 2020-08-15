@@ -2,6 +2,11 @@
 
 require "psource/version"
 
+class Hoge
+  def rm
+  end
+end
+
 module Psource
   class Error < StandardError; end
   # Your code goes here...
@@ -11,7 +16,7 @@ module Psource
   module Extension
     def source
       path, line = source_location
-      Source.new(path).definition_lines_begins_at(line)
+      Source.new(path).snip_definition_from(line)
     end
   end
 end
